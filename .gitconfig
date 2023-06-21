@@ -1,0 +1,44 @@
+[user]
+	email = sartoriusrex@gmail.com
+	name = dennismai
+[core]
+	autocrlf = input
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[branch]
+	autosetuprebase = always
+[transfer]
+	fsckobjects = true
+[fetch]
+	fsckobjects = true
+[receive]
+	fsckobjects = true
+[alias]
+	s = status
+	a = add
+	cm = commit -m
+	c = commit
+	co = checkout
+	cob = checkout -b
+  # checks outs and tracks a remote branch locally, the argument being the branch name in the remote, which can be copied and pasted
+  cobo = "!f() { git checkout --track \"origin/$1\"; }; f"
+  com = checkout master
+  cop = checkout production
+	delb = branch -D
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	d = diff
+	ds = diff --staged
+	pob = push -u origin HEAD
+	p = pull
+  pu = push
+	pullom = pull --rebase --prune
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+  f = fetch
+
+[http]
+	postBuffer = 157286400
+[ssh]
+	postBuffer = 157286400
