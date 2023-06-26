@@ -23,7 +23,7 @@
 	co = checkout
 	cob = checkout -b
   # checks outs and tracks a remote branch locally, the argument being the branch name in the remote, which can be copied and pasted
-  cobo = "!f() { git checkout --track \"origin/$1\"; }; f"
+  cobo = "!f() { git fetch && git checkout --track \"origin/$1\"; }; f"
   com = checkout master
   cop = checkout production
 	delb = branch -D
